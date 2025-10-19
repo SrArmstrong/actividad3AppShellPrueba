@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prueba de AppShell</title>
+    <link rel="manifest" href="manifest.json">
+    <link rel="icon" type="image/png" href="icons/icon-192.png">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        <header>
+            <div class="logo">PWA - Actividad 3</div>
+            <button class="menu-toggle" id="menuToggle">☰</button>
+        </header>
+        
+        <nav class="sidebar" id="sidebar">
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="#" class="nav-link active" data-section="home">Inicio</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link" data-section="products">Productos</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link" data-section="news">Noticias</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link" data-section="tasks">Tareas</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link" data-section="about">Acerca de</a>
+                </li>
+            </ul>
+        </nav>
+        
+        <div class="overlay" id="overlay"></div>
+        
+        <main class="content" id="content">
+            <!-- Sección Inicio -->
+            <section class="content-section active" id="home">
+                <h2 class="section-title">AppShell PWA</h2>
+                <p>Esta página fue creada para aprender cómo funcionan los Service Workers, el archivo manifest.json y la estructura básica de una PWA que mantiene una interfaz simple con contenido dinámico.</p>
+            </section>
+
+            
+            <!-- Sección Productos -->
+            <section class="content-section" id="products">
+                <h2 class="section-title">Nuestros Productos</h2>
+                <div class="loading" id="productsLoading">
+                    <div class="spinner"></div>
+                    <p>Cargando productos...</p>
+                </div>
+                <div class="products-grid" id="productsGrid"></div>
+            </section>
+            
+            <!-- Sección Noticias -->
+            <section class="content-section" id="news">
+                <h2 class="section-title">Últimas Noticias</h2>
+                <div class="loading" id="newsLoading">
+                    <div class="spinner"></div>
+                    <p>Cargando noticias...</p>
+                </div>
+                <div id="newsList"></div>
+            </section>
+            
+            <!-- Sección Tareas -->
+            <section class="content-section" id="tasks">
+                <h2 class="section-title">Mis Tareas</h2>
+                <div class="task-form">
+                    <input type="text" id="taskInput" placeholder="Nueva tarea...">
+                    <button id="addTaskBtn">Agregar</button>
+                </div>
+                <ul id="taskList"></ul>
+            </section>
+            
+            <!-- Sección Acerca de -->
+            <section class="content-section" id="about">
+                <h2 class="section-title">Acerca de esta PWA</h2>
+                <p>Esta aplicación web progresiva demuestra las siguientes características:</p>
+                <ul>
+                    <li>App Shell con estructura definida</li>
+                    <li>Service Worker para funcionamiento offline</li>
+                    <li>Manifiesto de aplicación web</li>
+                    <li>Contenido dinámico</li>
+                    <li>Diseño completamente responsivo</li>
+                </ul>
+            </section>
+        </main>
+        
+        <footer>
+            <p>PWA - Actividad 3 &copy; 2025 - Sergio Pérez Aldavalde 2022371061</p>
+        </footer>
+        
+        <div class="connection-status" id="connectionStatus"></div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

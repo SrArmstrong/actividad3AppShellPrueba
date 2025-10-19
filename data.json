@@ -1,0 +1,92 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Laptop Gaming Pro",
+      "price": 1299.99,
+      "category": "Tecnología",
+      "description": "Laptop de alto rendimiento para gaming y trabajo",
+      "image": "💻",
+      "stock": 15
+    },
+    {
+      "id": 2,
+      "name": "Smartphone Ultra",
+      "price": 899.99,
+      "category": "Tecnología", 
+      "description": "Teléfono inteligente con cámara de 108MP",
+      "image": "📱",
+      "stock": 25
+    },
+    {
+      "id": 3,
+      "name": "Auriculares Noise Cancelling",
+      "price": 299.99,
+      "category": "Audio",
+      "description": "Auriculares con cancelación activa de ruido",
+      "image": "🎧",
+      "stock": 30
+    },
+    {
+      "id": 4,
+      "name": "Smart Watch Series X",
+      "price": 399.99,
+      "category": "Wearables",
+      "description": "Reloj inteligente con monitor de salud",
+      "image": "⌚",
+      "stock": 20
+    },
+    {
+      "id": 5,
+      "name": "Tablet Digital Pro",
+      "price": 599.99,
+      "category": "Tecnología",
+      "description": "Tablet para diseño y productividad",
+      "image": "📟",
+      "stock": 12
+    },
+    {
+      "id": 6,
+      "name": "Cámara DSLR 4K",
+      "price": 799.99,
+      "category": "Fotografía",
+      "description": "Cámara profesional con video 4K",
+      "image": "📷",
+      "stock": 8
+    }
+  ],
+  "news": [
+    {
+      "id": 1,
+      "title": "Nueva Actualización del Sistema",
+      "content": "Hemos lanzado una nueva versión con mejoras significativas en el rendimiento y nuevas características de seguridad.",
+      "date": "2024-01-15",
+      "category": "Actualización",
+      "author": "Equipo de Desarrollo"
+    },
+    {
+      "id": 2,
+      "title": "Mantenimiento Programado",
+      "content": "El sistema estará en mantenimiento el próximo sábado de 2:00 AM a 6:00 AM. Agradecemos su comprensión.",
+      "date": "2024-01-14", 
+      "category": "Mantenimiento",
+      "author": "Soporte Técnico"
+    },
+    {
+      "id": 3,
+      "title": "Nuevas Características Disponibles",
+      "content": "Hemos añadido nuevas funcionalidades incluyendo modo oscuro y sincronización en la nube.",
+      "date": "2024-01-13",
+      "category": "Novedad",
+      "author": "Product Team"
+    },
+    {
+      "id": 4,
+      "title": "Expansión de Servicios",
+      "content": "Estamos expandiendo nuestros servicios a nuevas regiones. Próximamente más información.",
+      "date": "2024-01-12",
+      "category": "Expansión",
+      "author": "Dirección"
+    }
+  ]
+}
