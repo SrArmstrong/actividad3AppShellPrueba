@@ -1,16 +1,13 @@
-// Archivo principal que inicializa la aplicación
+// app.js
 class PWAApp {
     constructor() {
         this.init();
     }
 
     init() {
-        // Registrar Service Worker
+        // Monitoreo del funcionamiento del SW
         this.registerServiceWorker();
-        
-        // Monitorear estado de conexión
         this.monitorConnection();
-        
         console.log('PWA App inicializada');
     }
 
@@ -52,11 +49,6 @@ class PWAApp {
     }
 }
 
-// Inicializar la aplicación cuando el DOM esté listo
-document.addEventListener('DOMContentLoaded', () => {
-    new PWAApp();
-});
-
 // Manejo de navegación y menú
 class Navigation {
     constructor() {
@@ -64,8 +56,7 @@ class Navigation {
         this.contentSections = document.querySelectorAll('.content-section');
         this.menuToggle = document.getElementById('menuToggle');
         this.sidebar = document.getElementById('sidebar');
-        this.overlay = document.getElementById('overlay');
-        
+        this.overlay = document.getElementById('overlay');        
         this.init();
     }
 
@@ -78,8 +69,6 @@ class Navigation {
         this.navLinks.forEach(link => {
             link.addEventListener('click', (e) => this.handleNavigation(e, link));
         });
-
-        // Menú móvil
         this.menuToggle.addEventListener('click', () => this.toggleMobileMenu());
         this.overlay.addEventListener('click', () => this.closeMobileMenu());
     }
@@ -102,7 +91,6 @@ class Navigation {
         const sectionId = link.getAttribute('data-section');
         document.getElementById(sectionId).classList.add('active');
         
-        // Cerrar menú en móvil
         if (window.innerWidth <= 768) {
             this.closeMobileMenu();
         }
@@ -119,11 +107,6 @@ class Navigation {
     }
 }
 
-// Inicializar navegación
-document.addEventListener('DOMContentLoaded', () => {
-    new Navigation();
-});
-
 // Manejo de la sección de productos
 class ProductsManager {
     constructor() {
@@ -139,18 +122,22 @@ class ProductsManager {
     }
 
     loadProducts() {
-        // Simular datos de productos
-        this.products = [
-            { id: 1, name: "Laptop Gamer", price: 1299.99, category: "Tecnología" },
-            { id: 2, name: "Smartphone", price: 599.99, category: "Tecnología" },
-            { id: 3, name: "Auriculares Bluetooth", price: 89.99, category: "Audio" }
-        ];
-
-        // Simular tiempo de carga
-        setTimeout(() => {
-            this.renderProducts();
-        }, 1500);
+        fetch('./productos.json')
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Error al cargar el archivo JSON');
+                }
+                return response.json();
+            })
+            .then(data => {
+                this.products = data;
+                this.renderProducts();
+            })
+            .catch(error => {
+                console.error('Error al cargar productos:', error);
+            });
     }
+
 
     renderProducts() {
         this.productsLoading.style.display = 'none';
@@ -179,11 +166,6 @@ class ProductsManager {
         return productCard;
     }
 }
-
-// Inicializar productos
-document.addEventListener('DOMContentLoaded', () => {
-    new ProductsManager();
-});
 
 // Manejo de la sección de noticias
 class NewsManager {
@@ -249,11 +231,6 @@ class NewsManager {
         return newsElement;
     }
 }
-
-// Inicializar noticias
-document.addEventListener('DOMContentLoaded', () => {
-    new NewsManager();
-});
 
 // Manejo de la sección de tareas
 class TasksManager {
@@ -344,5 +321,9 @@ class TasksManager {
 
 // Inicializar tareas
 document.addEventListener('DOMContentLoaded', () => {
+    new PWAApp();
+    new Navigation();
+    new ProductsManager();
+    new NewsManager();
     new TasksManager();
 });

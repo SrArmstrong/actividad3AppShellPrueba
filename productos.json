@@ -1,0 +1,5 @@
+[
+  { "id": 1, "name": "Laptop Gamer", "price": 1299.99, "category": "Tecnología" },
+  { "id": 2, "name": "Smartphone", "price": 599.99, "category": "Tecnología" },
+  { "id": 3, "name": "Auriculares Bluetooth", "price": 89.99, "category": "Audio" }
+]
